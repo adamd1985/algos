@@ -1,4 +1,4 @@
-package org.adamd;
+package org.adamd.sort;
 
 public class MS {
     public int[] arr;

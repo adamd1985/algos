@@ -1,4 +1,4 @@
-package org.adamd;
+package org.adamd.search;
 
 public class BST <T extends Comparable<? super T>>{
     public class BSTNode<T extends Comparable<? super T>>{
