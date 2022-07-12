@@ -22,6 +22,9 @@ public class GraphSearch {
     }
 
     private static void dfs_recur(int[][] vertices, int curVertexIdx, List<Integer> dag, Set<Integer> visited){
+        if (curVertexIdx >= vertices.length){
+            return;
+        }
         Arrays.stream(vertices[curVertexIdx]).filter(x -> !visited.contains(x)).forEach(x -> {
             visited.add(x);
             dfs_recur(vertices, x, dag, visited);
@@ -41,5 +44,19 @@ public class GraphSearch {
         };
 
         System.out.println(dag);
+    }
+
+    public static boolean dfs_cyclic(int[][] vertices, int startVertex){
+        Set<Integer> visited = new HashSet<>();
+        List<Integer> dag = new ArrayList<>();
+
+        for (var i = startVertex; i < vertices.length; ++i){
+            if (visited.contains(i)) {
+                return true;
+            }
+            dfs_recur(vertices, i, dag, visited);
+        };
+
+        return false;
     }
 }
