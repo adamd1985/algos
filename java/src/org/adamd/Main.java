@@ -2,9 +2,6 @@ package org.adamd;
 
 import org.adamd.challanges.AllPrimes;
 import org.adamd.challanges.kSort;
-import org.adamd.datastruct.BasicTree;
-import org.adamd.datastruct.MaxHeapTree;
-import org.adamd.datastruct.RBTree;
 import org.adamd.search.*;
 import org.adamd.sort.BubbleSort;
 import org.adamd.sort.CountingSort;
@@ -41,25 +38,6 @@ public class Main {
         System.out.println("Sorted array %s".formatted(Arrays.toString(arr)));
     }
 
-    public static void basicTree() {
-        BasicTree<Integer> root = new BasicTree<>(10);
-        var subTree = root.addLeaf(12);
-        subTree.addLeaf(45);
-        subTree = root.addLeaf(20);
-
-        subTree.addLeaf(122);
-        subTree.addLeaf(65);
-
-        root.getCorners(root);
-    }
-
-    public static void maxHeapTest() {
-        int arr[] = {12, 11, 13, 5, 6, 7};
-        final MaxHeapTree mht = new MaxHeapTree();
-
-        mht.sort(arr);
-        System.out.println("Sorted array %s".formatted(Arrays.toString(arr)));
-    }
 
 
     public static void binarysearch() {
@@ -70,13 +48,6 @@ public class Main {
         System.out.println("Found at index: %d".formatted(idx));
     }
 
-    public static void graphSearches() {
-        int arr[][] = {{1, 2}, {0, 2, 4}, {0, 1, 3}, {2}, {5}};
-
-        boolean isCyclic = GraphSearch.dfs_cyclic(arr, 0);
-        System.out.println("Is cyclic: %b".formatted(isCyclic));
-
-    }
 
     public static void countingSort() {
         var arr = RandomGenerator.getDefault().ints(30, 0, 10).toArray();
